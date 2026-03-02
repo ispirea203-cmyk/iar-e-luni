@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iar e luni...</title>
+    <style>
+        /* Fundal animat */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Imaginea de fundal care se mișcă încet */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 120%;
+            height: 120%;
+            background-image: url('https://images.unsplash.com/photo-1601758123927-0dc684e57f92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YXBvY2FsaXBzZXxlbnwwfHx8fDE2OTQ5NjE3MTU&ixlib=rb-4.0.3&q=80&w=1080');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.5);
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: scale(1) translate(0, 0); }
+            50% { transform: scale(1.1) translate(-20px, -20px); }
+            100% { transform: scale(1) translate(0, 0); }
+        }
+
+        /* Text animat care plutește */
+        .text {
+            color: white;
+            font-size: 4em;
+            text-shadow: 3px 3px 10px black;
+            animation: floatText 3s ease-in-out infinite;
+        }
+
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="text">Iar e luni....</div>
+</body>
+</html>
